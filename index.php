@@ -47,7 +47,37 @@
 
     <p><?= $message ?></p>
     <p>A shortcode for less-than, question mark, php, echo is less-than question mark equals. And an ending semicolon is not needed.</p>
+
+
+    <?php
+        $books = [
+            "Green Eggs and Ham",
+            "The Cat in the Hat",
+            "Hop on Pop",
+            "Fox in Socks",
+            "Dr. Seuss's ABC",
+            "The Sneetches and Other Stories",
+        ];
+    ?>
+
+    <p>There are 2 different ways to show a foreach in PHP. One uses curly braces, and the other uses a colon and then a closing php tag with endforeach.</p>
+    <img src="./static/images/loop1.png" alt="loop1" style="margin: 1rem auto;" />
+    <ul>
+        <?php foreach($books as $book) { ?>
+            <li><?= $book ?></li>
+        <?php } ?>
+    </ul>
+
+    <img src="./static/images/loop2.png" alt="loop1" style="margin: 1rem auto;"/>
+    <ul>
+        <?php foreach($books as $book):  ?>
+            <li><?= $book ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <footer style="width: 100%; padding: 1rem 0; display: flex; background: #FFFFE0; align-items: center; justify-content: center; margin-top: 1rem;">
     <p>&copy; <?php echo date("Y"); ?></p>
+    </footer>
 
                             
 </body>
