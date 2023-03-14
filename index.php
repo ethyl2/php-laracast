@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
 </head>
-<body style="display: grid; font-family: sans-serif; height: 100vh; place-items:center; margin: 0;">
+<body style="width: 100%; display: flex; flex-direction: column; font-family: sans-serif; height: 100vh; place-items:center; margin: 0;">
     <h1>HELLO World!</h1>
     <p>One option to start a local server:</p>
     <pre>php -S localhost:8888</pre>
@@ -85,24 +85,36 @@
             [
                 'title' => 'The Hunger Games',
                 'author' => 'Suzanne Collins',
-                'purchaseUrl' => 'https://www.amazon.com/Hunger-Games-Suzanne-Collins/dp/0439023483'
+                'purchaseUrl' => 'https://www.amazon.com/Hunger-Games-Suzanne-Collins/dp/0439023483',
+                'year' => 2008
             ],
             [
                 'title' => 'First Nations Version: An Indigenous Translation of the New Testament',
                 'author' => 'Terry M. Wildman',
-                'purchaseUrl' => 'https://www.amazon.com/First-Nations-Version-Indigenous-Translation/dp/0830813500'
+                'purchaseUrl' => 'https://www.amazon.com/First-Nations-Version-Indigenous-Translation/dp/0830813500',
+                'year' => 2021,
             ],
             [
                 'title' => 'Code Talker: A Novel About the Navajo Marines of World War Two ',
                 'author' => 'Joseph Bruchac ',
-                'purchaseUrl' => 'https://www.amazon.com/Code-Talker-Novel-Navajo-Marines/dp/0142405965/'
+                'purchaseUrl' => 'https://www.amazon.com/Code-Talker-Novel-Navajo-Marines/dp/0803729219/',
+                'year' => 2005,
             ]
         ]
     ?>
 
-    <img src="./static/images/associative-array.png" alt="associative array example" style="margin: 1rem auto;"/>
+    <img src="./static/images/associative-array.png" alt="associative array example" style="margin: 1rem auto; width: 36rem;"/>
 
-    <footer style="width: 100%; padding: 1rem 0; display: flex; background: #FFFFE0; align-items: center; justify-content: center; margin-top: 1rem;">
+    <ul>
+        <?php foreach($books2 as $book) { ?>
+            <li style="margin: 1rem auto;">
+                <a href="<?= $book['purchaseUrl'] ?>"><?= $book['title'] ?></a>
+                by <?= $book['author'] ?> (<?= $book['year'] ?>)
+            </li>
+        <?php } ?>
+    </ul>
+    
+    <footer style="width:100%; padding: 1rem 0; display: flex; background: #FFFFE0; align-items: center; justify-content: center; border-top: 0.25rem solid red;">
     <p>&copy; <?php echo date("Y"); ?></p>
     </footer>
 
