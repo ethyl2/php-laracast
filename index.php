@@ -68,12 +68,39 @@
         <?php } ?>
     </ul>
 
-    <img src="./static/images/loop2.png" alt="loop1" style="margin: 1rem auto;"/>
+    <img src="./static/images/loop2.png" alt="loop2" style="margin: 1rem auto;"/>
     <ul>
         <?php foreach($books as $book):  ?>
             <li><?= $book ?></li>
         <?php endforeach; ?>
     </ul>
+
+    <p>You can access items in an array by their index in brackets. Here is the first AKA $book[0]:</p>
+    <p><?= $books[0] ?></p>
+
+    <h2>Associative Arrays!</h2>
+
+    <?php 
+        $books2 = [
+            [
+                'title' => 'The Hunger Games',
+                'author' => 'Suzanne Collins',
+                'purchaseUrl' => 'https://www.amazon.com/Hunger-Games-Suzanne-Collins/dp/0439023483'
+            ],
+            [
+                'title' => 'First Nations Version: An Indigenous Translation of the New Testament',
+                'author' => 'Terry M. Wildman',
+                'purchaseUrl' => 'https://www.amazon.com/First-Nations-Version-Indigenous-Translation/dp/0830813500'
+            ],
+            [
+                'title' => 'Code Talker: A Novel About the Navajo Marines of World War Two ',
+                'author' => 'Joseph Bruchac ',
+                'purchaseUrl' => 'https://www.amazon.com/Code-Talker-Novel-Navajo-Marines/dp/0142405965/'
+            ]
+        ]
+    ?>
+
+    <img src="./static/images/associative-array.png" alt="associative array example" style="margin: 1rem auto;"/>
 
     <footer style="width: 100%; padding: 1rem 0; display: flex; background: #FFFFE0; align-items: center; justify-content: center; margin-top: 1rem;">
     <p>&copy; <?php echo date("Y"); ?></p>
